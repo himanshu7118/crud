@@ -1,0 +1,26 @@
+{% extends 'hello/base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1>Welcome to the school page</h1>
+    <br>
+    <h1>School Details:</h1>
+    <p>
+        Name: {{ school_detail.name }}
+    </p>
+    <p>
+        Principle: {{ school_detail.principle }}
+    </p>
+    <p>
+        Location: {{ school_detail.location }}
+    </p>
+</div>
+<div class="contsiner">
+    <p>
+        <a class='btn btn-warning' href="{% url 'hello:update' pk=school_detail.pk %}">Update</a>
+    </p>
+    <p>
+        <a class="btn btn-danger" href="{% url 'hello:delete' pk=school_detail.pk %}">Delete</a>
+    </p>
+</div>
+{% endblock %}
